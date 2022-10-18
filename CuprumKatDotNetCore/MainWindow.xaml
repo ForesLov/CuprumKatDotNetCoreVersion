@@ -1,0 +1,45 @@
+﻿<Window x:Class="CuprumKatDotNetCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuprumKatDotNetCore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" FontFamily="Global User Interface">
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="UserList" Header="Список пользователей" FontFamily="Georgia" Loaded="UserList_Loaded" >
+
+                <Grid>
+                    <Button x:Name="CreateUserB" Content="Создать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="CreateUserB_Click"  />
+                    <DataGrid x:Name="dataGridUsers" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="25"/>
+                    <Button x:Name="UserUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="UserUpdateButton_Click" Margin="85,0,0,0"  />
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="InventorisationList" Header="Списание" FontFamily="Georgia" Loaded="InventorisationList_Loaded" >
+                <Grid >
+                    <Button x:Name="CreateInventarB" Content="Создать" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="80" Height="25" Click="CreateInventarB_Click">
+                    </Button>
+                    <DataGrid x:Name="dataGridInv" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27"/>
+                    <Button x:Name="InvUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="InvUpdateButton_Click" Margin="85,0,0,0" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="DeliveList" HorizontalAlignment="Center" Height="21" Header="Доставка на склад"  FontFamily="Georgia" VerticalAlignment="Top" Width="130" Loaded="DeliveList_Loaded" >
+                <Grid>
+                    <Button x:Name="CreateDelB" Content="Добавить" FontFamily="Georgia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="80" Click="CreateDelB_Click" />
+                    <DataGrid x:Name="dataGridDeliv" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27"/>
+                    <Button x:Name="DelivUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="DelivUpdateButton_Click" Margin="85,0,0,0"  />
+                    <Button x:Name="ReportCreateForm" Content="Сформировать отчёт" HorizontalAlignment="Left" Height="25" Margin="170,0,0,0" VerticalAlignment="Top" Width="135" Click="ReportCreateForm_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ProdustT" HorizontalAlignment="Center" Height="21" Header="Добавить продукт" VerticalAlignment="Top" FontFamily="Georgia" Width="108" Loaded="ProdustT_Loaded">
+                <Grid>
+                    <Button x:Name="CreateProductB" Content="Добавить новый продукт"  FontFamily="Georgia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateProductB_Click" />
+                    <DataGrid x:Name="dataGridProduct" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27"/>
+                    <Button x:Name="ProductUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="ProductUpdateButton_Click" Margin="150,0,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

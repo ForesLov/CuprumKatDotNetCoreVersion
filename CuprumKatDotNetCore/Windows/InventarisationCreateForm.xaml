@@ -1,0 +1,18 @@
+﻿<Window x:Class="CuprumKatDotNetCore.Windows.InventarisationCreateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuprumKatDotNetCore.Windows"
+        mc:Ignorable="d"
+        Title="Списание" Height="306" Width="961" ResizeMode="NoResize" FontFamily="Global User Interface">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="15,10,0,0" TextWrapping="Wrap" Text="Объект списания:" VerticalAlignment="Top" FontSize="40" FontFamily="Georgia"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,87,0,0" TextWrapping="Wrap" Text="Количество списываемого:" VerticalAlignment="Top" FontSize="40" FontFamily="Georgia"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,137,0,0" TextWrapping="Wrap" Text="На сумму:" VerticalAlignment="Top" FontSize="40" FontFamily="Georgia"/>
+        <ComboBox x:Name="ProductBox" HorizontalAlignment="Left" Height="36" Margin="368,19,0,0" VerticalAlignment="Top" Width="260" TextBlock.FontFamily="Georgia" TextBlock.FontSize="25" DataContextChanged="ProductBox_DataContextChanged" />
+        <TextBox x:Name="Amount_SpisField" HorizontalAlignment="Left" Height="45" Margin="532,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" FontSize="40" TextChanged="Amount_SpisField_TextChanged"/>
+        <Button x:Name="CreateInvB" Content="Провести" HorizontalAlignment="Center" Height="60" VerticalAlignment="Top" Width="542" FontSize="40" FontWeight="Bold" Click="CreateInvB_Click" Margin="0,213,0,0"/>
+        <TextBlock x:Name="SumSpisField" HorizontalAlignment="Left" Margin="216,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" FontFamily="Georgia"/>
+    </Grid>
+</Window>
