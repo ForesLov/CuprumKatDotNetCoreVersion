@@ -23,5 +23,10 @@ namespace CuprumKatDotNetCore.Windows
         {
             InitializeComponent();
         }
+
+        private void ButtonCreate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

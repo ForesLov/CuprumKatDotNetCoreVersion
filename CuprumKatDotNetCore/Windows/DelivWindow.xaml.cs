@@ -23,5 +23,25 @@ namespace CuprumKatDotNetCore.Windows
         {
             InitializeComponent();
         }
+
+        private void Amount_Field_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void NameCombox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void Amount_Field_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void GoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

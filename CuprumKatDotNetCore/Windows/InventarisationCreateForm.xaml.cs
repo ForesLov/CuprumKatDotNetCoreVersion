@@ -23,5 +23,20 @@ namespace CuprumKatDotNetCore.Windows
         {
             InitializeComponent();
         }
+
+        private void ProductBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void Amount_SpisField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CreateInvB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

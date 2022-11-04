@@ -69,5 +69,25 @@ namespace CuprumKatDotNetCore
         {
 
         }
+
+        private void UserList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void InventorisationList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeliveList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ProdustT_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
