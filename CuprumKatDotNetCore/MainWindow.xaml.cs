@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CuprumKatDotNetCore.Database;
+using CuprumKatDotNetCore.Modeles;
+using CuprumKatDotNetCore.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +26,18 @@ namespace CuprumKatDotNetCore
         public MainWindow()
         {
             InitializeComponent();
+            CurrentUser = LogIn();
+            if (CurrentUser is null) Close();
+            
         }
-
+        private IsUser? LogIn()
+        {
+            Hide();
+            var login = new LogginWindow();
+            login.ShowDialog();
+            Show();
+            return login.isUser;
+        }
         private void CreateInventarB_Click(object sender, RoutedEventArgs e)
         {
 
@@ -89,5 +102,6 @@ namespace CuprumKatDotNetCore
         {
 
         }
+        private IsUser CurrentUser { get; set; }
     }
 }
