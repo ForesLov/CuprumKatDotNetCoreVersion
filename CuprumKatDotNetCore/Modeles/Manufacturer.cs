@@ -5,19 +5,13 @@ namespace CuprumKatDotNetCore.Modeles;
 
 public class Manufacturer : DbEntity
 {
-    public Manufacturer()
-    {
-        EDeliveries = new HashSet<EDelivery>();
-        Products = new HashSet<Product>();
-    }
-
+    
     public string? CompanyName { get; set; }
     public string? UrAddress { get; set; }
     public string? PhoneNumber { get; set; }
     public string? Email { get; set; }
     public string? Ogrn { get; set; }
     public string? Inn { get; set; }
-    public string? Kpp { get; set; }
     public string? Okpo { get; set; }
     public string? Okved { get; set; }
     public string? CeoLname { get; set; }
@@ -27,8 +21,4 @@ public class Manufacturer : DbEntity
     public string? RespersName { get; set; }
     public string? RespersSname { get; set; }
     public string? RespersPhone { get; set; }
-    public string? RespersPose { get; set; }
-
-    public virtual ICollection<EDelivery> EDeliveries { get; set; }
-    public virtual ICollection<Product> Products { get; set; }
 }
