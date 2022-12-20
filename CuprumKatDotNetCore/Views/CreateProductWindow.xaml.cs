@@ -21,6 +21,8 @@ namespace CuprumKatDotNetCore.Windows
     /// </summary>
     public partial class CreateProductWindow : Window
     {
+        public long am;
+        public double pf;
         public CreateProductWindow()
         {
             InitializeComponent();
@@ -41,11 +43,32 @@ namespace CuprumKatDotNetCore.Windows
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new ApplicationDbContext())
+            string itemtext1 = ManufBox.SelectedItem.ToString();
+            string itemtext2 = StoreField.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(itemtext1)
+                | string.IsNullOrEmpty(itemtext2)
+                | string.IsNullOrEmpty(NameField.Text)
+                | string.IsNullOrEmpty(MeasureField.Text)
+                | string.IsNullOrEmpty(AmountField.Text)
+                | string.IsNullOrEmpty(PriceField.Text)
+                )
             {
-                Product product = new Product() {ProductName = NameField.Text, Manufacturers = (ManufBox.SelectedItem as Manufacturer), ProductAmount = int.Parse(AmountField.Text), ProductMeasure = MeasureField.Text, ProductPrice = int.Parse(PriceField.Text), Storehouses = (StoreField.SelectedItem as Storehouse)};
+                MessageBox.Show("Ошибка! Не все поля заполнены");
+                return;
             }
-
+            else if (!long.TryParse(AmountField.Text, out am) | !(double.TryParse(PriceField.Text, out pf)))
+            {
+                MessageBox.Show("Ошибка! В полях с количеством и ценой дожны быть числа!");
+            }
+            else
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    Product product = new Product() { ProductName = NameField.Text, Manufacturers = (ManufBox.SelectedItem as Manufacturer), ProductAmount = int.Parse(AmountField.Text), ProductMeasure = MeasureField.Text, ProductPrice = int.Parse(PriceField.Text), Storehouses = (StoreField.SelectedItem as Storehouse) };
+                    context.SaveChanges();
+                    Close();
+                }
+            }
         }
     }
 }

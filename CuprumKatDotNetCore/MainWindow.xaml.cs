@@ -1,5 +1,6 @@
 ﻿using CuprumKatDotNetCore.Database;
 using CuprumKatDotNetCore.Modeles;
+using CuprumKatDotNetCore.Views;
 using CuprumKatDotNetCore.Windows;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -58,7 +59,6 @@ namespace CuprumKatDotNetCore
 
         private void CreateUserB_Click(object sender, RoutedEventArgs e)
         {
-                        
             var u = new RegistrationForm(FormType.Create);
             u.ShowDialog();
         }
@@ -66,6 +66,10 @@ namespace CuprumKatDotNetCore
         private void UserUpdateButton_Click(object sender, RoutedEventArgs e)
         {
 
+            using (var c = new ApplicationDbContext())
+            {
+                UpdateDataGrid(dataGridUsers, c.Users.ToList());
+            }
         }
 
         private void CreateDelB_Click(object sender, RoutedEventArgs e)
@@ -85,7 +89,8 @@ namespace CuprumKatDotNetCore
 
         private void CreateProductB_Click(object sender, RoutedEventArgs e)
         {
-
+            var u = new CreateProductWindow();
+            u.ShowDialog();
         }
 
         private void ProductUpdateButton_Click(object sender, RoutedEventArgs e)
@@ -103,18 +108,18 @@ namespace CuprumKatDotNetCore
         }
 
         private void InventorisationList_Loaded(object sender, RoutedEventArgs e)
-        {
-            /*using (var c = new ApplicationDbContext())
+        {/*
+            using (var c = new ApplicationDbContext())
             {
-                UpdateDataGrid(dataGridInv, c.writeOffs);
+                UpdateDataGrid(dataGridInv, c.ProductWriteOffs);
             }*/
         }
 
         private void DeliveList_Loaded(object sender, RoutedEventArgs e)
         {
-           /* using (var c = new ApplicationDbContext())
+          /*  using (var c = new ApplicationDbContext())
             {
-                UpdateDataGrid(dataGridDeliv, c.deliveryViews);
+                UpdateDataGrid(dataGridDeliv, c.eDeliveries);
             }*/
         }
 
@@ -134,6 +139,12 @@ namespace CuprumKatDotNetCore
                 var u = new RegistrationForm(FormType.Edit, dataGridUsers.SelectedItem as User);
                 u.ShowDialog();
             }
+        }
+
+        private void CreateManufacturer_Click(object sender, RoutedEventArgs e)
+        {
+            var u = new ManufacturerCreateForm();
+            u.ShowDialog();
         }
     }
 }

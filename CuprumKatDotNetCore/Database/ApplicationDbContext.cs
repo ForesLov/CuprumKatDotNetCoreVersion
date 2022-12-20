@@ -19,14 +19,13 @@ namespace CuprumKatDotNetCore.Database
         public DbSet<CompanyPose> CompanyPoses => Set<CompanyPose>();
         public DbSet<EDelivery> eDeliveries=> Set<EDelivery>();
         public DbSet<Manufacturer> Manufacturers => Set<Manufacturer>();
-        public DbSet<DeliveryView> deliveryViews=> Set<DeliveryView>();
-        public DbSet<WriteOff> writeOffs=> Set<WriteOff>();
+        public DbSet<ProductWriteOff> ProductWriteOffs=> Set<ProductWriteOff>();
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Storehouse> Storehouses => Set<Storehouse>();
-        public DbSet<WriteOff> WriteOffs=> Set<WriteOff>();
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=CuprumKat.mdb");
+            optionsBuilder.UseSqlite("Data Source=CuprumKat.db");
         }
     }
 }

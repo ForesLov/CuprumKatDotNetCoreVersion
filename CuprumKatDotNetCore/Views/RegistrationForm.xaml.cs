@@ -80,6 +80,7 @@ namespace CuprumKatDotNetCore.Windows
                 {
                     User user = new User() { ULname = LNameField.Text, UName = UNameField.Text, USname = SNameField.Text, UAddress = AdressField.Text, UEmail = EmailField.Text, UphoneNumber = PhoneNumberField.Text, ULog = U_Log_Field.Text, UPass = U_Pass_Field.Text, Pose = (PoseBox.SelectedItem as CompanyPose) };
                     context.SaveChanges();
+                    Close();
                 }
             }
         }

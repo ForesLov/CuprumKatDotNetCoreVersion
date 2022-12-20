@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" >
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" FontFamily="Global User Inteface" >
     <Grid>
         <TabControl>
             <TabItem x:Name="UserList" Header="Список пользователей" Loaded="UserList_Loaded" >
@@ -13,7 +13,7 @@
                 <Grid>
                     <Button x:Name="CreateUserB" Content="Создать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="CreateUserB_Click"  />
                     <Button x:Name="EditUserB" Content="Редактировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="25"  Click="EditUserB_Click" Margin="170,0,0,0"  />
-                    <DataGrid x:Name="dataGridUsers" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="15" FontWeight="Bold">
+                    <DataGrid x:Name="dataGridUsers" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Имя" Binding="{Binding UName}"/>
                             <DataGridTextColumn Header="Отчество" Binding="{Binding USName}"/>
@@ -33,7 +33,7 @@
                 <Grid >
                     <Button x:Name="CreateInventarB" Content="Создать" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="80" Height="25" Click="CreateInventarB_Click">
                     </Button>
-                    <DataGrid x:Name="dataGridInv" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0"  FontSize="27">
+                    <DataGrid x:Name="dataGridInv" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0"  FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Номер списания" Binding="{Binding ID}"/>
                             <DataGridTextColumn Header="Дата списания" Binding="{Binding DateOff}"/>
@@ -51,7 +51,7 @@
             <TabItem x:Name="DeliveList" HorizontalAlignment="Center" Height="21" Header="Доставка на склад"    VerticalAlignment="Top" Width="130" Loaded="DeliveList_Loaded" >
                 <Grid>
                     <Button x:Name="CreateDelB" Content="Добавить"   HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="80" Click="CreateDelB_Click" />
-                    <DataGrid x:Name="dataGridDeliv" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27">
+                    <DataGrid x:Name="dataGridDeliv" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Номер доставки" Binding="{Binding ID}"/>
                             <DataGridTextColumn Header="Дата доставки" Binding="{Binding DelivDate}"/>
@@ -70,7 +70,7 @@
             <TabItem x:Name="ProdustT" HorizontalAlignment="Center" Height="21" Header="Добавить продукт" VerticalAlignment="Center"   Width="121" Loaded="ProdustT_Loaded">
                 <Grid>
                     <Button x:Name="CreateProductB" Content="Добавить новый продукт"    HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateProductB_Click" />
-                    <DataGrid x:Name="dataGridProduct" AutomationProperties.IsRowHeader="False" AutoGenerateColumns="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="15">
+                    <DataGrid x:Name="dataGridProduct" AutomationProperties.IsRowHeader="False" AutoGenerateColumns="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Номер продукта" Binding="{Binding ID}"/>
                             <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}"/>
@@ -83,7 +83,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="ProductUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="ProductUpdateButton_Click" Margin="150,0,0,0"/>
-                    <Button x:Name="CreateManufacturer" Content="Добавить поставщика"    HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateProductB_Click" Margin="235,0,0,0" />
+                    <Button x:Name="CreateManufacturer" Content="Добавить поставщика"    HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateManufacturer_Click" Margin="235,0,0,0" />
                 </Grid>
             </TabItem>
         </TabControl>

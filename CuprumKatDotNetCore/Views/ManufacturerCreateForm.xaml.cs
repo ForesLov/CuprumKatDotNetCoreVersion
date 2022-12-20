@@ -63,6 +63,8 @@ namespace CuprumKatDotNetCore.Views
                 using (ApplicationDbContext context = new ApplicationDbContext())
                 {
                     Manufacturer manufacturer = new Manufacturer() { CeoLname = CEOLastNameTextBox.Text, CeoName = CEOFirstNameTextBox.Text, CeoSname = CEOSurnameTextBox.Text, CompanyName = companyNameTextBox.Text, Email = mailTextBox.Text, Inn = INNTextBox.Text, Okpo = OKPOTextBox.Text, Ogrn = OGRNTextBox.Text, Okved = OKVEDTextBox.Text, PhoneNumber = companyPhoneTextBox.Text, RepresLname = representativeLastNameTextBox.Text, RespersName = representativeFirstNameTextBox.Text, RespersPhone = representativePhone.Text, RespersSname = representativeSurnameTextBox.Text, UrAddress = companyLocationTextBox.Text };
+                    context.SaveChanges();
+                    Close();
                 }
             }
         }

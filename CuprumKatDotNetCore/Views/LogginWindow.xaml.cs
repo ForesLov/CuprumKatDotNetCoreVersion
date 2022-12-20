@@ -34,7 +34,7 @@ namespace CuprumKatDotNetCore.Windows
                 /*var User = new User() { Id = 228, ULog = "admin", UPass = "admin" };
                 context.Users.Add(User);
                 context.SaveChanges();*/
-
+                
                 User = context.Users.FirstOrDefault(a => a.UPass == PassField.Password && a.ULog == LogField.Text);
                 if (User != null)
                 {
