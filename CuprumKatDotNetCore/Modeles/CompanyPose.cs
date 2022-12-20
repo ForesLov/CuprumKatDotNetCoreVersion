@@ -8,10 +8,10 @@ public class CompanyPose : DbEntity
 {
     public CompanyPose()
     {
-        IsUsers = new HashSet<IsUser>();
+        IsUsers = new HashSet<User>();
     }
 
     public int IdPose { get; set; }
     public string? PoseName { get; set; }
-    public virtual ICollection<IsUser> IsUsers { get; set; }
+    public virtual ICollection<User> IsUsers { get; set; }
 }

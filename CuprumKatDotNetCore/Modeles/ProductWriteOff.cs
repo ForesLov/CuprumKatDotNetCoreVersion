@@ -12,5 +12,5 @@ public class ProductWriteOff : DbEntity
     public DateTime? DateOff { get; set; }
 
     public virtual Product? Product { get; set; }
-    public virtual IsUser? UIdNavigation { get; set; }
+    public virtual User? UIdNavigation { get; set; }
 }

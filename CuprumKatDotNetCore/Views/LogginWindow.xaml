@@ -7,11 +7,11 @@
         Title="Окно авторизации" Height="404" Width="306" ResizeMode="NoResize" FontFamily="Global User Interface">
     <Grid>
 
-        <Button x:Name="LogIn" Content="Войти" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Width="228" Height="50" FontFamily="Global User Interface" FontSize="40" FontWeight="Bold" Click="LogIn_Click"/>
-        <PasswordBox x:Name="PassField" HorizontalAlignment="Center" Margin="0,218,0,0" VerticalAlignment="Top" Width="228" FontFamily="Global User Interface" FontSize="40" Height="50"  />
         <TextBlock HorizontalAlignment="Center" Margin="0,154,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top" FontSize="50" FontFamily="Global User Interface" FontWeight="Bold" Height="57" Width="220"/>
         <TextBox x:Name="LogField" HorizontalAlignment="Center" Height="50" Margin="0,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" FontFamily="Global User Interface" FontSize="40" TextAlignment="Center"/>
+        <PasswordBox x:Name="PassField" HorizontalAlignment="Center" Margin="0,218,0,0" VerticalAlignment="Top" Width="228" FontFamily="Global User Interface" FontSize="40" Height="50"  TabIndex="2"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,29,0,0" TextWrapping="Wrap" Text="Логин:" VerticalAlignment="Top" FontSize="50" FontFamily="Global User Interface" FontWeight="Bold" Height="57" Width="188"/>
+        <Button x:Name="LogIn" Content="Войти" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Width="228" Height="50" FontFamily="Global User Interface" FontSize="40" FontWeight="Bold" Click="LogIn_Click" IsDefault="True"/>
 
     </Grid>
 </Window>

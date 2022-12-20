@@ -15,5 +15,5 @@ public class EDelivery : DbEntity
 
     public virtual Product? IdProductNavigation { get; set; }
     public virtual Manufacturer? Manuf { get; set; }
-    public virtual IsUser? UIdNavigation { get; set; }
+    public virtual User? UIdNavigation { get; set; }
 }

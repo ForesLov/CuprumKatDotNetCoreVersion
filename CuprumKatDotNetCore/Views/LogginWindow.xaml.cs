@@ -26,16 +26,28 @@ namespace CuprumKatDotNetCore.Windows
         {
             InitializeComponent();
         }
-        public IsUser isUser { get; set; }
+        public User User { get; set; }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                context.WriteOffs
-                var account = context.Users.FirstOrDefault(a => a.UPass == PassField.Password && a.ULog == LogIn.Content.ToString());
-                if (account != null)
+                /*var User = new IsUser() { Id = 228, ULog = "admin", UPass = "admin" };
+                context.Users.Add(User);
+                context.SaveChanges();*/
+
+                User = context.Users.FirstOrDefault(a => a.UPass == PassField.Password && a.ULog == LogField.Text);
+                if (User != null)
                 {
                     Close();
+                }
+                else
+                {
+                    string a = "";
+                    foreach (var item in context.Users)
+                    {
+                        a += $"{item.Id} {item.UName} {item.ULog} {item.UPass}\n";
+                    }
+                    MessageBox.Show(a);
                 }
             }
         }

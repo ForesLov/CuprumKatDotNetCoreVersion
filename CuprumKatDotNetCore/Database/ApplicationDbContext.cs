@@ -14,7 +14,7 @@ namespace CuprumKatDotNetCore.Database
         {
             Database.EnsureCreated();
         }
-        public DbSet<IsUser> Users => Set<IsUser>();
+        public DbSet<User> Users => Set<User>();
 
         public DbSet<CompanyPose> CompanyPoses => Set<CompanyPose>();
         public DbSet<EDelivery> eDeliveries=> Set<EDelivery>();

@@ -30,13 +30,13 @@ namespace CuprumKatDotNetCore
             if (CurrentUser is null) Close();
             
         }
-        private IsUser? LogIn()
+        private User? LogIn()
         {
             Hide();
             var login = new LogginWindow();
             login.ShowDialog();
             Show();
-            return login.isUser;
+            return login.User;
         }
         private void CreateInventarB_Click(object sender, RoutedEventArgs e)
         {
@@ -102,6 +102,6 @@ namespace CuprumKatDotNetCore
         {
 
         }
-        private IsUser CurrentUser { get; set; }
+        private User? CurrentUser { get; set; }
     }
 }
