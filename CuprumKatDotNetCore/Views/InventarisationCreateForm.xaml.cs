@@ -23,14 +23,14 @@ namespace CuprumKatDotNetCore.Windows
         public InventarisationCreateForm()
         {
             InitializeComponent();
-            using (var context = new ApplicationDbContext())
+           /* using (var context = new ApplicationDbContext())
             {
                 foreach (var item in context.)
                 {
                     ProductBox.Items.Add(item);
                 }
                 ProductBox.Items.Add(null);
-            }
+            }*/
         }
 
         private void ProductBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

@@ -1,0 +1,45 @@
+﻿<Window x:Class="CuprumKatDotNetCore.Views.ManufacturerCreateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CuprumKatDotNetCore.Views"
+        mc:Ignorable="d"
+        Title="ManufacturerCreateForm" Height="599" Width="517">
+    <Grid>
+        <TextBox x:Name="companyNameTextBox" HorizontalAlignment="Left" Margin="235,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="100"/>
+        <TextBox x:Name="companyLocationTextBox" HorizontalAlignment="Left" Margin="235,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="100"/>
+        <TextBox x:Name="companyPhoneTextBox" HorizontalAlignment="Left" Margin="235,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="12"/>
+        <TextBox x:Name="mailTextBox" HorizontalAlignment="Left" Margin="235,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="60"/>
+        <TextBox x:Name="OGRNTextBox" HorizontalAlignment="Left" Margin="235,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="20"/>
+        <TextBox x:Name="INNTextBox" HorizontalAlignment="Left" Margin="235,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="20"/>
+        <TextBox x:Name="OKPOTextBox" HorizontalAlignment="Left" Margin="235,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="20"/>
+        <TextBox x:Name="OKVEDTextBox" HorizontalAlignment="Left" Margin="235,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="20"/>
+        <TextBox x:Name="representativeSurnameTextBox" HorizontalAlignment="Left" Margin="235,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <TextBox x:Name="representativeFirstNameTextBox" HorizontalAlignment="Left" Margin="235,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <TextBox x:Name="representativeLastNameTextBox" HorizontalAlignment="Left" Margin="235,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <TextBox x:Name="representativePhone" HorizontalAlignment="Left" Margin="235,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="12"/>
+        <TextBox x:Name="representativeMailTextBox" HorizontalAlignment="Left" Margin="235,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="60"/>
+        <TextBox x:Name="CEOFirstNameTextBox" HorizontalAlignment="Left" Margin="235,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <TextBox x:Name="CEOSurnameTextBox" HorizontalAlignment="Left" Margin="235,449,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <TextBox x:Name="CEOLastNameTextBox" HorizontalAlignment="Left" Margin="235,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" FontSize="16" Height="30" MaxLength="50"/>
+        <Label Content="Наименование компании" HorizontalAlignment="Left" Margin="23,35,0,0" VerticalAlignment="Top" Height="32" Width="204" FontSize="16"/>
+        <Label Content="Расположение" HorizontalAlignment="Left" Margin="23,65,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="23,95,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Mail" HorizontalAlignment="Left" Margin="23,123,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="ОГРН" HorizontalAlignment="Left" Margin="23,153,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="ИНН" HorizontalAlignment="Left" Margin="23,182,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="ОКПО" HorizontalAlignment="Left" Margin="23,209,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="ОКВЕД" HorizontalAlignment="Left" Margin="23,239,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Фамилия представителя" HorizontalAlignment="Left" Margin="23,269,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Имя представителя" HorizontalAlignment="Left" Margin="23,299,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Отчество предствителя" HorizontalAlignment="Left" Margin="23,329,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Телефон представителя" HorizontalAlignment="Left" Margin="23,359,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Mail предствителя" HorizontalAlignment="Left" Margin="23,389,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Имя директора" HorizontalAlignment="Left" Margin="23,419,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Фамилия директора" HorizontalAlignment="Left" Margin="23,449,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Label Content="Отчество директора" HorizontalAlignment="Left" Margin="23,479,0,0" VerticalAlignment="Top" Height="30" Width="204" FontSize="16"/>
+        <Button x:Name="CreateCompanyButton" Content="Создать" HorizontalAlignment="Left" Margin="90,529,0,0" VerticalAlignment="Top" Width="352" Click="CreateCompanyButton_Click" FontSize="16" Height="35"/>
+        <Label x:Name="titleLabel" Content="Сведения о новом поставщике:" Margin="82,0,69,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+    </Grid>
+</Window>

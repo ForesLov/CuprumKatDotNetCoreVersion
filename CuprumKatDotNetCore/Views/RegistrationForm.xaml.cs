@@ -56,10 +56,31 @@ namespace CuprumKatDotNetCore.Windows
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-
-                User user = new User() { ULname = LNameField.Text, UName = UNameField.Text, USname = SNameField.Text, UAddress = AdressField.Text, UEmail = EmailField.Text, UphoneNumber = PhoneNumberField.Text, ULog = U_Log_Field.Text, UPass = U_Pass_Field.Text };
-
-                context.SaveChanges();
+                if (string.IsNullOrEmpty(LNameField.Text)
+                | string.IsNullOrEmpty(UNameField.Text)
+                | string.IsNullOrEmpty(SNameField.Text)
+                | string.IsNullOrEmpty(AdressField.Text)
+                | string.IsNullOrEmpty(EmailField.Text)
+                | string.IsNullOrEmpty(PhoneNumberField.Text)
+                | string.IsNullOrEmpty(U_Log_Field.Text)
+                | string.IsNullOrEmpty(U_Pass_Field.Text)
+                | string.IsNullOrEmpty(PoseBox.SelectedItem.ToString())
+                )
+                {
+                    MessageBox.Show("Ошибка! Не все поля заполнены");
+                    return;
+                }
+                else
+            if (!long.TryParse(PhoneNumberField.Text, out long num))
+                {
+                    MessageBox.Show("В поля типа \"Номер телефона\" можно вводить только числа без пробелов и иных символов.");
+                    return;
+                }
+                else
+                {
+                    User user = new User() { ULname = LNameField.Text, UName = UNameField.Text, USname = SNameField.Text, UAddress = AdressField.Text, UEmail = EmailField.Text, UphoneNumber = PhoneNumberField.Text, ULog = U_Log_Field.Text, UPass = U_Pass_Field.Text, Pose = (PoseBox.SelectedItem as CompanyPose) };
+                    context.SaveChanges();
+                }
             }
         }
     }

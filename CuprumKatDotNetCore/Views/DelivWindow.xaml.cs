@@ -25,11 +25,11 @@ namespace CuprumKatDotNetCore.Windows
             InitializeComponent();
             using (var context = new ApplicationDbContext())
             {
-                foreach (var item in context.)
+                /*foreach (var item in context.)
                 {
                     .Items.Add(item);
                 }
-                ProductBox.Items.Add(null);
+                ProductBox.Items.Add(null);*/
             }
         }
 

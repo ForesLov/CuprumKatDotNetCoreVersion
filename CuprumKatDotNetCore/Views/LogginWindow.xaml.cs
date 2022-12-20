@@ -31,7 +31,7 @@ namespace CuprumKatDotNetCore.Windows
         {
             using (ApplicationDbContext context = new ApplicationDbContext())
             {
-                /*var User = new IsUser() { Id = 228, ULog = "admin", UPass = "admin" };
+                /*var User = new User() { Id = 228, ULog = "admin", UPass = "admin" };
                 context.Users.Add(User);
                 context.SaveChanges();*/
 
