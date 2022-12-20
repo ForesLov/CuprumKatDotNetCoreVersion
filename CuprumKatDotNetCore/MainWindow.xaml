@@ -17,7 +17,19 @@
 
                 <Grid>
                     <Button x:Name="CreateUserB" Content="Создать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="CreateUserB_Click"  />
-                    <DataGrid x:Name="dataGridUsers" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="25"/>
+                    <Button x:Name="EditUserB" Content="Редактировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="25"  Click="EditUserB_Click" Margin="170,0,0,0"  />
+                    <DataGrid x:Name="dataGridUsers" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="15" FontWeight="Bold">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding UName}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding USName}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding ULName}"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding UAddress}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding UphoneNumber}"/>
+                            <DataGridTextColumn Header="Почта" Binding="{Binding UEmail}"/>
+                            <DataGridTextColumn Header="Логин" Binding="{Binding ULog}"/>
+                            <DataGridTextColumn Header="Пароль" Binding="{Binding UPass}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <Button x:Name="UserUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="UserUpdateButton_Click" Margin="85,0,0,0"  />
                 </Grid>
 
@@ -38,7 +50,7 @@
                     <Button x:Name="ReportCreateForm" Content="Сформировать отчёт" HorizontalAlignment="Left" Height="25" Margin="170,0,0,0" VerticalAlignment="Top" Width="135" Click="ReportCreateForm_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="ProdustT" HorizontalAlignment="Center" Height="21" Header="Добавить продукт" VerticalAlignment="Top"   Width="108" Loaded="ProdustT_Loaded">
+            <TabItem x:Name="ProdustT" HorizontalAlignment="Center" Height="21" Header="Добавить продукт" VerticalAlignment="Top"   Width="121" Loaded="ProdustT_Loaded" Margin="0,-2,0,0">
                 <Grid>
                     <Button x:Name="CreateProductB" Content="Добавить новый продукт"    HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateProductB_Click" />
                     <DataGrid x:Name="dataGridProduct" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27"/>

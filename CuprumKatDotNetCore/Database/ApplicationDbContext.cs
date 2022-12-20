@@ -19,6 +19,8 @@ namespace CuprumKatDotNetCore.Database
         public DbSet<CompanyPose> CompanyPoses => Set<CompanyPose>();
         public DbSet<EDelivery> eDeliveries=> Set<EDelivery>();
         public DbSet<Manufacturer> Manufacturers => Set<Manufacturer>();
+        public DbSet<DeliveryView> deliveryViews=> Set<DeliveryView>();
+        public DbSet<WriteOff> writeOffs=> Set<WriteOff>();
         public DbSet<Product> Products => Set<Product>();
         public DbSet<Storehouse> Storehouses => Set<Storehouse>();
         public DbSet<WriteOff> WriteOffs=> Set<WriteOff>();

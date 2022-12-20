@@ -10,22 +10,20 @@
         <TextBlock HorizontalAlignment="Left" Margin="44,126,0,0" TextWrapping="Wrap" Text="Адресс:" VerticalAlignment="Top"   FontSize="40"/>
         <TextBlock HorizontalAlignment="Left" Margin="44,336,0,0" TextWrapping="Wrap" Text="Логин:" VerticalAlignment="Top"   FontSize="40"/>
         <TextBlock HorizontalAlignment="Left" Margin="38,386,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top"   FontSize="40"/>
-        <TextBox x:Name="LNameField" HorizontalAlignment="Left" Height="24" Margin="56,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"   UndoLimit="25" MaxLength="25"/>
+        <TextBox x:Name="LNameField" HorizontalAlignment="Left" Height="24" Margin="56,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Text="{Binding ULName}"  UndoLimit="25" MaxLength="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="342,24,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top"   FontSize="20"/>
-        <TextBox x:Name="UNameField" HorizontalAlignment="Left" Height="24" Margin="278,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"   UndoLimit="25" MaxLength="25"/>
+        <TextBox x:Name="UNameField" HorizontalAlignment="Left" Height="24" Margin="278,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"  Text="{Binding UName}" UndoLimit="25" MaxLength="25"/>
         <TextBlock HorizontalAlignment="Left" Margin="536,17,0,0" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Top"   FontSize="20" RenderTransformOrigin="0.341,0.309"/>
-        <TextBox x:Name="SNameField" HorizontalAlignment="Left" Height="24" Margin="494,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170
-                 "   UndoLimit="25" MaxLength="25"/>
-        <TextBox x:Name="AdressField" HorizontalAlignment="Left" Height="31" Margin="240,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="50" FontSize="20" MaxLength="50"/>
+        <TextBox x:Name="SNameField" HorizontalAlignment="Left" Height="24" Margin="494,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Text="{Binding USName}"  UndoLimit="25" MaxLength="25"/>
+        <TextBox x:Name="AdressField" Text="{Binding UAddress}" HorizontalAlignment="Left" Height="31" Margin="240,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="50" FontSize="20" MaxLength="50"/>
         <TextBlock HorizontalAlignment="Left" Margin="46,186,0,0" TextWrapping="Wrap" Text="Почта:" VerticalAlignment="Top"   FontSize="40"/>
         <TextBlock HorizontalAlignment="Left" Margin="44,236,0,0" TextWrapping="Wrap" Text="Телефон:" VerticalAlignment="Top"   FontSize="40"/>
         <TextBlock HorizontalAlignment="Left" Margin="44,286,0,0" TextWrapping="Wrap" Text="Должность:" VerticalAlignment="Top"   FontSize="40"/>
-        <TextBox x:Name="EmailField" HorizontalAlignment="Left" Height="31" Margin="240,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="40" FontSize="20" MaxLength="40"/>
-        <TextBox x:Name="PhoneNumberField" HorizontalAlignment="Left" Height="31" Margin="240,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="18" FontSize="20" MaxLength="18"/>
-        <TextBox x:Name="U_Log_Field" HorizontalAlignment="Left" Height="31" Margin="240,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="25" FontSize="20" MaxLines="1" MinLines="1" MaxLength="25"/>
-        <TextBox x:Name="U_Pass_Field" HorizontalAlignment="Left" Height="31" Margin="240,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="15" FontSize="20" MaxLength="15"/>
-        <ComboBox x:Name="PoseBox" HorizontalAlignment="Left" Margin="268,296,0,0" VerticalAlignment="Top" Width="396" Height="35" Background="White"   FontSize="20"/>
+        <TextBox x:Name="EmailField" Text="{Binding UEmail}" HorizontalAlignment="Left" Height="31" Margin="240,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="40" FontSize="20" MaxLength="40"/>
+        <TextBox x:Name="PhoneNumberField" Text="{Binding UphoneNumber}" HorizontalAlignment="Left" Height="31" Margin="240,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="18" FontSize="20" MaxLength="18"/>
+        <TextBox x:Name="U_Log_Field" Text="{Binding ULog}" HorizontalAlignment="Left" Height="31" Margin="240,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="25" FontSize="20" MaxLines="1" MinLines="1" MaxLength="25"/>
+        <TextBox x:Name="U_Pass_Field" Text="{Binding UPass}" HorizontalAlignment="Left" Height="31" Margin="240,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="424"   UndoLimit="15" FontSize="20" MaxLength="15"/>
+        <ComboBox x:Name="PoseBox" HorizontalAlignment="Left" SelectedItem="{Binding Pose}" Margin="268,296,0,0" VerticalAlignment="Top" Width="396" Height="35" Background="White"   FontSize="20"/>
         <Button x:Name="CreationUserButton" Content="Создать" HorizontalAlignment="Left" Height="54" Margin="68,449,0,0" VerticalAlignment="Top" Width="518" Click ="CreationUserButton_Click"   FontSize="50" />
-
     </Grid>
 </Window>
