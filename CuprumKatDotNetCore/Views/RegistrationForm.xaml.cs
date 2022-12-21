@@ -41,12 +41,12 @@ namespace CuprumKatDotNetCore.Windows
                 formType = FormType.Edit;
                 formUser = user;
             }
-            this.DataContext = user;
+            this.DataContext = formUser;
             using (var context = new ApplicationDbContext())
             {
                 foreach (var item in context.CompanyPoses)
                 {
-                    PoseBox.Items.Add(item);
+                    PoseBox.Items.Add(new Label() { Content = item });
                 }
                 PoseBox.Items.Add(null); 
             }
@@ -64,7 +64,7 @@ namespace CuprumKatDotNetCore.Windows
                 | string.IsNullOrEmpty(PhoneNumberField.Text)
                 | string.IsNullOrEmpty(U_Log_Field.Text)
                 | string.IsNullOrEmpty(U_Pass_Field.Text)
-                | string.IsNullOrEmpty(PoseBox.SelectedItem.ToString())
+                | PoseBox.SelectedItem is null
                 )
                 {
                     MessageBox.Show("Ошибка! Не все поля заполнены");
@@ -78,7 +78,15 @@ namespace CuprumKatDotNetCore.Windows
                 }
                 else
                 {
-                    User user = new User() { ULname = LNameField.Text, UName = UNameField.Text, USname = SNameField.Text, UAddress = AdressField.Text, UEmail = EmailField.Text, UphoneNumber = PhoneNumberField.Text, ULog = U_Log_Field.Text, UPass = U_Pass_Field.Text, Pose = (PoseBox.SelectedItem as CompanyPose) };
+                   // User user = new User() { ULname = LNameField.Text, UName = UNameField.Text, USname = SNameField.Text, UAddress = AdressField.Text, UEmail = EmailField.Text, UphoneNumber = PhoneNumberField.Text, ULog = U_Log_Field.Text, UPass = U_Pass_Field.Text, Pose = (PoseBox.SelectedItem as Label).Content as CompanyPose };
+                    if (formType == FormType.Edit)
+                    {
+                        context.Update(formUser);
+                    }
+                    else
+                    {
+                        context.Add(formUser);
+                    }
                     context.SaveChanges();
                     Close();
                 }

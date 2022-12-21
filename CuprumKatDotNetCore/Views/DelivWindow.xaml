@@ -10,10 +10,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Text="Количество:"/>
         <TextBlock HorizontalAlignment="Left" Margin="14,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Text="На цену:"/>
         <ComboBox x:Name="NameCombox" HorizontalAlignment="Left" Margin="334,16,0,0" VerticalAlignment="Top" Width="444" DataContextChanged="NameCombox_DataContextChanged" />
-        <TextBox x:Name="Amount_Field" HorizontalAlignment="Left" Margin="334,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" Height="36" FontSize="25" TextChanged="Amount_Field_TextChanged_1"/>
+        <TextBox x:Name="Amount_Field" HorizontalAlignment="Left" Margin="334,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="444" Height="36" FontSize="25" TextChanged="Amount_Field_TextChanged"/>
         <TextBlock x:Name="CostField" HorizontalAlignment="Left" Margin="334,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40"/>
-        <Button x:Name="GoButton" Content="Провести" HorizontalAlignment="Center" Height="52" Margin="0,247,0,0" VerticalAlignment="Top" Width="780" FontWeight="Bold" Click="GoButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="20,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Text="Поставщик:"/>
-        <ComboBox x:Name="CompBox" HorizontalAlignment="Left" Margin="334,178,0,0" VerticalAlignment="Top" Width="444"/>
+        <Button x:Name="GoButton" Content="Провести" HorizontalAlignment="Center" Height="52" Margin="0,225,0,0" VerticalAlignment="Top" Width="780" FontWeight="Bold" Click="GoButton_Click"/>
     </Grid>
 </Window>

@@ -6,5 +6,8 @@ namespace CuprumKatDotNetCore.Modeles;
 public class Storehouse : DbEntity
 {
      public string? StorePurpose { get; set; }
-
+    public override string ToString()
+    {
+        return StorePurpose.ToString();
+    }
 }

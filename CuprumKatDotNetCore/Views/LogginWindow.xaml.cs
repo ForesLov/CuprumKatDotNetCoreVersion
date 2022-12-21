@@ -33,8 +33,12 @@ namespace CuprumKatDotNetCore.Windows
             {
                 /*var User = new User() { Id = 228, ULog = "admin", UPass = "admin" };
                 context.Users.Add(User);
+                var role = new CompanyPose() { Id = 1, PoseName = "Сисадмин" };
+                context.CompanyPoses.Add(role);
+                var storehouse = new Storehouse() { Id = 1, StorePurpose = "Руда" };
+                context.Storehouses.Add(storehouse);
                 context.SaveChanges();*/
-                
+
                 User = context.Users.FirstOrDefault(a => a.UPass == PassField.Password && a.ULog == LogField.Text);
                 if (User != null)
                 {

@@ -30,12 +30,12 @@ namespace CuprumKatDotNetCore.Windows
             {
                 foreach (var item in context.Manufacturers)
                 {
-                    ManufBox.Items.Add(item);
+                    ManufBox.Items.Add(new Label() { Content = item });
                 }
                 ManufBox.Items.Add(null);
                 foreach (var item in context.Storehouses)
                 {
-                    StoreField.Items.Add(item);
+                    StoreField.Items.Add(new Label() {Content = item });
                 }
             }
 
@@ -64,7 +64,14 @@ namespace CuprumKatDotNetCore.Windows
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    Product product = new Product() { ProductName = NameField.Text, Manufacturers = (ManufBox.SelectedItem as Manufacturer), ProductAmount = int.Parse(AmountField.Text), ProductMeasure = MeasureField.Text, ProductPrice = int.Parse(PriceField.Text), Storehouses = (StoreField.SelectedItem as Storehouse) };
+                    Product product = new Product() { 
+                        ProductName = NameField.Text,
+                        Manufacturers = context.Manufacturers.FirstOrDefault(m=> m.Id == ((ManufBox.SelectedItem as Label).Content as Manufacturer).Id), 
+                        ProductAmount = int.Parse(AmountField.Text), 
+                        ProductMeasure = MeasureField.Text, 
+                        ProductPrice = int.Parse(PriceField.Text), 
+                        Storehouses = context.Storehouses.FirstOrDefault(s=>s.Id == ((StoreField.SelectedItem as Label).Content as Storehouse).Id) };
+                    context.Add(product);
                     context.SaveChanges();
                     Close();
                 }

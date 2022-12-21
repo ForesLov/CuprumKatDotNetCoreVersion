@@ -1,4 +1,5 @@
 ﻿using CuprumKatDotNetCore.Database;
+using CuprumKatDotNetCore.Modeles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,37 +21,67 @@ namespace CuprumKatDotNetCore.Windows
     /// </summary>
     public partial class DelivWindow : Window
     {
-        public DelivWindow()
+        private User user;
+
+        public DelivWindow(User user)
         {
             InitializeComponent();
+            this.user = user;
             using (var context = new ApplicationDbContext())
             {
-                /*foreach (var item in context.)
+                foreach (var item in context.Products)
                 {
-                    .Items.Add(item);
+                    NameCombox.Items.Add(new Label() { Content = item });
                 }
-                ProductBox.Items.Add(null);*/
+            }
+        }
+        string Cost()
+        {
+            int.TryParse(Amount_Field.Text, out int amount);
+            using (var context = new ApplicationDbContext())
+            {
+                var cost = context.Products.First(p => p.Id == ((NameCombox.SelectedItem as Label).Content as Product).Id).ProductPrice * amount;
+                return cost.ToString();
             }
         }
 
         private void Amount_Field_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (NameCombox.SelectedItem != null)
+                CostField.Text = Cost();
         }
 
         private void NameCombox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-
-        }
-
-        private void Amount_Field_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
+            CostField.Text = Cost();
         }
 
         private void GoButton_Click(object sender, RoutedEventArgs e)
         {
+            if (NameCombox.SelectedItem == null
 
+               | string.IsNullOrEmpty(Amount_Field.Text)
+               | !int.TryParse(Amount_Field.Text, out int amountdelv)
+               | amountdelv < 0
+               )
+            {
+                MessageBox.Show("Ошибка! Есть какая-то ошибка!");
+            }
+            else
+            {
+                using (var context = new ApplicationDbContext()) 
+                {
+                    EDelivery delivery = new EDelivery() { DelivAmount = amountdelv,
+                        DelivCost = decimal.Parse(CostField.Text),
+                        DelivDate = DateTime.Now,
+                        Products = context.Products.First( p=> p.Id == ((NameCombox.SelectedItem as Label).Content as Product).Id),
+                        UId = context.Users.First(u=> u.Id == user.Id) 
+                    };      
+                    context.Add(delivery);
+                    context.SaveChanges();
+                    Close();
+                }
+            }
         }
     }
 }

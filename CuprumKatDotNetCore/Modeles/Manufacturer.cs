@@ -21,4 +21,8 @@ public class Manufacturer : DbEntity
     public string? RespersName { get; set; }
     public string? RespersSname { get; set; }
     public string? RespersPhone { get; set; }
+    public override string ToString()
+    {
+        return CompanyName.ToString();
+    }
 }

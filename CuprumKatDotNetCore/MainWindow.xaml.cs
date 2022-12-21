@@ -34,7 +34,7 @@ namespace CuprumKatDotNetCore
         }
         void UpdateDataGrid(DataGrid dataGrid, IEnumerable<Object> items)
         {
-            dataGrid.Items.Clear();
+            
             dataGrid.ItemsSource= items;
 
         }
@@ -74,12 +74,16 @@ namespace CuprumKatDotNetCore
 
         private void CreateDelB_Click(object sender, RoutedEventArgs e)
         {
-
+            var u = new DelivWindow(CurrentUser);
+            u.ShowDialog();
         }
 
         private void DelivUpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            using (var c = new ApplicationDbContext())
+            {
+                UpdateDataGrid(dataGridDeliv, c.eDeliveries.ToList());
+            }
         }
 
         private void ReportCreateForm_Click(object sender, RoutedEventArgs e)
@@ -117,18 +121,19 @@ namespace CuprumKatDotNetCore
 
         private void DeliveList_Loaded(object sender, RoutedEventArgs e)
         {
-          /*  using (var c = new ApplicationDbContext())
+            using (var c = new ApplicationDbContext())
             {
-                UpdateDataGrid(dataGridDeliv, c.eDeliveries);
-            }*/
+                UpdateDataGrid(dataGridDeliv, c.eDeliveries.Include(d=> d.Products).Include(d => d.UId).ToArray());
+            }
         }
 
         private void ProdustT_Loaded(object sender, RoutedEventArgs e)
         {
-            /*using (var c = new ApplicationDbContext())
+            using (var c = new ApplicationDbContext())
             {
-                UpdateDataGrid(dataGridProduct, c.Products);
-            }*/
+                c.Products.Load();
+                UpdateDataGrid(dataGridProduct, c.Products.Include(m => m.Manufacturers).Include(m => m.Storehouses).ToArray());
+            }
         }
         private User? CurrentUser { get; set; }
 

@@ -16,8 +16,8 @@
                     <DataGrid x:Name="dataGridUsers" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Имя" Binding="{Binding UName}"/>
-                            <DataGridTextColumn Header="Отчество" Binding="{Binding USName}"/>
-                            <DataGridTextColumn Header="Фамилия" Binding="{Binding ULName}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding USname}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding ULname}"/>
                             <DataGridTextColumn Header="Адрес" Binding="{Binding UAddress}"/>
                             <DataGridTextColumn Header="Телефон" Binding="{Binding UphoneNumber}"/>
                             <DataGridTextColumn Header="Почта" Binding="{Binding UEmail}"/>
@@ -53,14 +53,14 @@
                     <Button x:Name="CreateDelB" Content="Добавить"   HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="80" Click="CreateDelB_Click" />
                     <DataGrid x:Name="dataGridDeliv" AutoGenerateColumns="False" AutomationProperties.IsRowHeader="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Номер доставки" Binding="{Binding ID}"/>
+                            <DataGridTextColumn Header="Номер доставки" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Дата доставки" Binding="{Binding DelivDate}"/>
-                            <DataGridTextColumn Header="Доставляется" Binding="{Binding ProductName}"/>
+                            <DataGridTextColumn Header="Доставляется" Binding="{Binding Products.ProductName}"/>
                             <DataGridTextColumn Header="Кол-во доставки" Binding="{Binding DelivAmount}"/>
                             <DataGridTextColumn Header="Сумма доставки" Binding="{Binding DelivCost}"/>
-                            <DataGridTextColumn Header="Фамилия" Binding="{Binding ULNamel}"/>
-                            <DataGridTextColumn Header="Имя" Binding="{Binding UName}"/>
-                            <DataGridTextColumn Header="Отчество" Binding="{Binding USName}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding UId.ULname}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding UId.UName}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding UId.USname}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="DelivUpdateButton" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25"  Click="DelivUpdateButton_Click" Margin="85,0,0,0"  />
@@ -72,13 +72,13 @@
                     <Button x:Name="CreateProductB" Content="Добавить новый продукт"    HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="145" Click="CreateProductB_Click" />
                     <DataGrid x:Name="dataGridProduct" AutomationProperties.IsRowHeader="False" AutoGenerateColumns="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" HeadersVisibility="Column" Margin="6,45,0,0" RenderTransformOrigin="0.166,-1.364" FontSize="27" FontWeight="Bold">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Номер продукта" Binding="{Binding ID}"/>
+                            <DataGridTextColumn Header="Номер продукта" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}"/>
                             <DataGridTextColumn Header="Ед. измерения" Binding="{Binding ProductMeasure}"/>
                             <DataGridTextColumn Header="Кол-во на складе" Binding="{Binding ProductAmount}"/>
                             <DataGridTextColumn Header="Цена единицы" Binding="{Binding ProductPrice}"/>
-                            <DataGridTextColumn Header="Поставщик" Binding="{Binding CompanyName}"/>
-                            <DataGridTextColumn Header="Склад" Binding="{Binding StorePurpose}"/>
+                            <DataGridTextColumn Header="Поставщик" Binding="{Binding Manufacturers.CompanyName}"/>
+                            <DataGridTextColumn Header="Склад" Binding="{Binding Storehouses.StorePurpose}"/>
 
                         </DataGrid.Columns>
                     </DataGrid>
