@@ -49,12 +49,16 @@ namespace CuprumKatDotNetCore
 
         private void CreateInventarB_Click(object sender, RoutedEventArgs e)
         {
-
+            var u = new InventarisationCreateForm(CurrentUser);
+            u.ShowDialog();
         }
 
         private void InvUpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            using (var c = new ApplicationDbContext())
+            {
+                UpdateDataGrid(dataGridInv, c.ProductWriteOffs.Include(p => p.product).Include(p => p.Users).ToArray());
+            }
         }
 
         private void CreateUserB_Click(object sender, RoutedEventArgs e)
@@ -86,11 +90,6 @@ namespace CuprumKatDotNetCore
             }
         }
 
-        private void ReportCreateForm_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void CreateProductB_Click(object sender, RoutedEventArgs e)
         {
             var u = new CreateProductWindow();
@@ -99,7 +98,11 @@ namespace CuprumKatDotNetCore
 
         private void ProductUpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            using (var c = new ApplicationDbContext())
+            {
+                c.Products.Load();
+                UpdateDataGrid(dataGridProduct, c.Products.Include(m => m.Manufacturers).Include(m => m.Storehouses).ToArray());
+            }
         }
 
         private void UserList_Loaded(object sender, RoutedEventArgs e)
@@ -112,11 +115,11 @@ namespace CuprumKatDotNetCore
         }
 
         private void InventorisationList_Loaded(object sender, RoutedEventArgs e)
-        {/*
+        {
             using (var c = new ApplicationDbContext())
             {
-                UpdateDataGrid(dataGridInv, c.ProductWriteOffs);
-            }*/
+                UpdateDataGrid(dataGridInv, c.ProductWriteOffs.Include(p=> p.product).Include(p => p.Users).ToArray());
+            }
         }
 
         private void DeliveList_Loaded(object sender, RoutedEventArgs e)
